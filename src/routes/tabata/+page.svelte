@@ -395,32 +395,20 @@
 
 <h2 class="h2">Exercises</h2>
 
-<div
-  style="display: flex; align-items: center; flex-direction: column; width: 100%; flex-wrap: wrap;"
->
-  {#each populatedRegime as exercise, index}
-    <div class="card bg-initial m-2" style="width: 30vw">
-      <header class="card-header"><h3 class="h3">{exercise.name}</h3></header>
-      <section class="p-4">
-        <p>Typ: {exercise.type}</p>
-        <p>Počet cviků: {exercise.exercises}</p>
-      </section>
-      <section class="p-4">
-        Cviky:
-        {console.info("act exer", exercise.actualExercises)}
-        {#if exercise.actualExercises}
-          {#each exercise.actualExercises as foo, index}
-            {console.info(foo)}
-            <div class="card bg-variant-filled" style="width: 20vw">
-              <header class="card-header">Cvik číslo: {index}</header>
-              <section class="p-4">
-                {foo.name || foo}
-              </section>
-            </div>
-          {/each}
-        {/if}
-      </section>
-      <footer class="card-footer">Tagy: {exercise.tag.join(", ")}</footer>
-    </div>
-  {/each}
-</div>
+{#each populatedRegime as exercise, index}
+  <h3 class="h3">{exercise.name}</h3>
+  <p><strong>Typ:</strong> {exercise.type}</p>
+  <p><strong>Počet cviků:</strong> {exercise.exercises}</p>
+  <p><strong>Tagy:</strong> {exercise.tag.join(", ")}</p>
+  {#if exercise.actualExercises}
+    <ol class="list m-4">
+      {#each exercise.actualExercises as foo, index}
+        <li>
+          <span class="badge-icon p-4 variant-soft-primary">{index + 1}</span>
+          <span>{foo.name}</span>
+        </li>
+      {/each}
+    </ol>
+  {/if}
+  <hr />
+{/each}

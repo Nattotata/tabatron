@@ -19,5 +19,13 @@
     </AppBar>
   </svelte:fragment>
   <!-- Page Route Content -->
+  <div class="main">
   <slot />
+</div>
 </AppShell>
+
+<style>
+  .main {
+    margin: 30px;
+  }
+</style>
