@@ -18,6 +18,7 @@ export type Exercise = {
   description: string;
   type: "Cardio" | "Stretch" | "Strength" | "Cooldown";
   tags: Tag[];
+  substitution?: boolean;
 };
 
 export type Round =
@@ -26,3 +27,16 @@ export type Round =
   | "kloubni rotace"
   | "nadstavba"
   | "cooldown";
+
+export type RoundTemplate = {
+  name: string;
+  type: "warmup" | "stretch" | "strength";
+  tabataIntervals: boolean;
+  time: number;
+  exercisesAmount: number;
+  repeats?: number;
+};
+
+export type TemplateWithTags = RoundTemplate & { tags: Tag[] };
+
+export type FilledTemplate = TemplateWithTags & { exercises: Exercise[] };
