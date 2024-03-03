@@ -12,9 +12,9 @@ const consolidateTags = (input: any) => {
   };
 };
 
-const url =
-  "https://script.google.com/macros/s/AKfycbzN6gKm0R5ZfVVzH5foWV3i7txXGVV5Udjfcj9WokWg-DrZ7y8Vg_iCTmaY5h-7yxyP/exec";
-
+// link to spreadsheet with data
+// in .env file now
+const url = ""
 export const load: PageLoad = async ({ fetch, params }) => {
   if (usingMockData) {
     return { exercises: mock_data };
