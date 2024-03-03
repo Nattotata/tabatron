@@ -1,3 +1,6 @@
+HSS je strength!    
+
+
     1. hluboky stabilizacni system (stretch i strength)
     2. lopatky (stretch i strength)
     3. nadstavba (stretch i strength)
@@ -70,3 +73,9 @@ Definice:
 
 - [input chips missing placeholder](https://www.skeleton.dev/components/input-chips)
 - [autocomplete input chips missing handler function in example](https://www.skeleton.dev/components/autocomplete)
+
+## Svelte docs
+
+https://svelte.dev/docs/special-elements#svelte-window
+
+Note that the page will not be scrolled to the initial value to avoid accessibility issues. Only subsequent changes to the bound variable of scrollX and scrollY will cause scrolling. However, if the scrolling behaviour is desired, call scrollTo() in onMount().

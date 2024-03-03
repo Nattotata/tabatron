@@ -8,21 +8,45 @@
     FilledTemplate,
   } from "./types";
   import { roundTemplate, autocompleteTag } from "./templates";
-  import { findExercisesByTag, findExercisesByType } from "./utils";
+  import {
+    findExercisesByTag,
+    findExercisesByTags,
+    findExercisesByType,
+    findSingleExerciseByTag,
+    fillTemplateWithTags,
+    findExerciseByName,
+    fillTemplateWithExercises,
+  } from "./utils";
+
+  import { get } from "svelte/store";
+  import { writable } from "svelte/store";
+
+  import { templateWithTags, templateWithExercises } from "./stores";
 
   // Data
   export let data;
   const allExercises: Exercise[] = data.exercises;
+  console.error(
+    findExercisesByTags({
+      allExercises,
+      tags: ["Biceps", "Triceps"],
+    })
+  );
+  // Store
 
   // State variables (mutable :( )
 
+  // TODO FIX THIS
+  let selectedTagTemplate: string[] = [];
+  let selectedTagExercises = Array(100)
+    .fill(null)
+    .map(() => []);
+  let handPickedExercise = Array(100)
+    .fill(null)
+    .map(() => []);
   let inputChip = "";
   let inputChipList: Tag[] = [];
   const debug: boolean = false;
-
-  let tabataRegime: Exercise[] = [];
-  let templateWithTags: TemplateWithTags[] = [];
-  let filledTemplate: FilledTemplate[] = [];
 
   function onInputChipSelect(event: CustomEvent): void {
     if (inputChipList.includes(event.detail.value) === false) {
@@ -30,117 +54,6 @@
       inputChip = "";
     }
   }
-
-  /** Fills a template with Tags.
-   * Accepts an array of 0-3 Tags from the user
-   * Return a template with Tags filled in.
-   * Rules:
-   * - Warmup is always Cardio
-   * - Kloubni rotace is always Stretch
-   * - HSS a Záda is always HSS and Záda
-   * - HSS nebo břicho is always HSS and Břicho
-   * - Strength exercises are filled with random tags from the input list and the rest of the tags
-   * - Stretch is always Stretch
-   *
-   * Strength exercises should include every tag at least once.
-   * */
-  const fillTemplateWithTags = ({
-    inputChipList,
-    roundTemplate,
-    debug = false,
-  }: {
-    inputChipList: Tag[];
-    roundTemplate: any;
-    debug: boolean;
-  }) => {
-    debug &&
-      console.debug("fillTemplateWithTags input", inputChipList, roundTemplate);
-    const focus: Tag[] = inputChipList;
-    const allTags = autocompleteTag.map((tag) => tag.value) as Tag[];
-    let nonFocus = allTags.filter((tag: Tag) => !focus.includes(tag));
-
-    const getRandomTagAndPop = (tags: Tag[]) => {
-      const randomTag = tags[Math.floor(Math.random() * tags.length)];
-      nonFocus = tags.filter((tag) => tag !== randomTag);
-      return randomTag;
-    };
-
-    const getRandomTag = (tags: Tag[]) => {
-      return tags[Math.floor(Math.random() * tags.length)];
-    };
-
-    const templateWithTags = roundTemplate.map((round: RoundTemplate) => {
-      if (round.type === "warmup") {
-        return { tags: ["Cardio"], ...round };
-      }
-      if (round.name === "kloubni rotace") {
-        return { tags: ["Stretch"], ...round };
-      }
-      if (round.name === "HSS a Záda") {
-        return { tags: ["Záda", "HSS"], ...round };
-      }
-      if (round.name === "HSS nebo břicho") {
-        return { tags: ["HSS", "Břicho"], ...round };
-      }
-      if (round.type === "strength") {
-        return {
-          tags: [getRandomTag(focus), getRandomTagAndPop(nonFocus)],
-          ...round,
-        };
-      }
-      if (round.type === "stretch") {
-        return { tags: ["Stretch"], ...round };
-      }
-    });
-    debug && console.debug("templateWithTags output", templateWithTags);
-    return templateWithTags;
-  };
-
-  const fillTemplateWithExercises = ({
-    debug,
-    templateWithTags,
-  }: {
-    debug: boolean;
-    templateWithTags: any;
-  }) => {
-    debug && console.debug("fillTemplateWithExercise input", templateWithTags);
-    const filledTemplate = templateWithTags.map((round: TemplateWithTags) => {
-      if (round.name === "kloubni rotace") {
-        return round;
-      }
-      if (round.type === "warmup") {
-        return {
-          exercises: findExercisesByType({
-            type: "Cardio",
-            numberOfExercises: round.exercisesAmount,
-            allExercises,
-          }),
-          ...round,
-        };
-      }
-      if (round.type === "stretch") {
-        return {
-          exercises: findExercisesByType({
-            type: "Stretch",
-            numberOfExercises: round.exercisesAmount,
-            allExercises,
-          }),
-          ...round,
-        };
-      }
-      return {
-        exercises: findExercisesByTag({
-          allExercises,
-          tags: round.tags,
-          numberOfExercises: round.exercisesAmount,
-          debug,
-        }),
-        ...round,
-      };
-    });
-    debug && console.info("fillTemplateWithExercise output", filledTemplate);
-    return filledTemplate;
-  };
 </script>
 
 <h1 class="h1">Tabatron</h1>
@@ -169,60 +82,192 @@
 <button
   class="btn variant-filled-primary"
   on:click={() =>
-    (templateWithTags = fillTemplateWithTags({
-      debug,
-      inputChipList,
-      roundTemplate,
-    }))}>Regime template</button
->
+    templateWithTags.set(
+      fillTemplateWithTags({
+        debug,
+        inputChipList,
+        roundTemplate,
+        tagOptions: autocompleteTag,
+      })
+    )}
+  ><a href="#templateWithTags">Generuj šablonu se štítky</a>
+</button>
 
 <button
   class="btn variant-filled-primary"
   on:click={() =>
-    (filledTemplate = fillTemplateWithExercises({ debug, templateWithTags }))}
-  >Populate template</button
+    templateWithExercises.set(
+      fillTemplateWithExercises({
+        debug,
+        templateWithTags: get(templateWithTags),
+        allExercises,
+      })
+    )}><a href="#templateWithExercises">Vyplň šablonu cvikami</a></button
 >
-<div class="flex" style="flex-wrap: wrap;">
-  {#each tabataRegime as exercise, index}
-    <div class="card m-5 w-20vw" style="width: 20vw">
-      <header class="card-header">Round {index + 1}</header>
-      <section class="p-4">{exercise.name}</section>
-      <footer class="card-footer">{exercise.type}</footer>
+
+<section id="templateWithTags">
+  <h2 class="h2">Template with Tags</h2>
+
+  <div class="flex" style="flex-wrap: wrap;">
+    {#each $templateWithTags as round, index (index)}
+      <div class="card m-5 w-30vw">
+        <header class="card-header">{round.name}</header>
+        <section class="p-4">
+          <p>Typ: {round.type}</p>
+          <p>Počet cviků: {round.exercisesAmount}</p>
+        </section>
+        <footer class="card-footer">
+          <label class="label flex flex-row">
+            <select
+              on:change={(e) => {
+                const selectedTag = e.target.value;
+                if (round.tags.includes(selectedTagTemplate)) {
+                  console.error("Tag already exists");
+                  return;
+                }
+                if (!selectedTag) {
+                  return;
+                }
+                templateWithTags.update((rounds) => {
+                  rounds[index].tags = [...rounds[index].tags, selectedTag];
+                  return rounds;
+                });
+                selectedTagTemplate[index] = selectedTag;
+              }}
+              class="select mt-2"
+              bind:value={selectedTagTemplate[index]}
+            >
+              <option value="" selected>Přidej tag:</option>
+              {#each autocompleteTag as tag}
+                {#if round.tags.includes(tag.value)}
+                  <option value={tag.value} disabled>{tag.value}</option>
+                {:else}
+                  <option value={tag.value}>{tag.value}</option>
+                {/if}
+              {/each}
+            </select>
+          </label>
+          {#each round.tags as tag}
+            <button
+              on:click={() => {
+                templateWithTags.update((round) => {
+                  round[index].tags = round[index].tags.filter(
+                    (t) => t !== tag
+                  );
+                  return round;
+                });
+              }}
+              class="chip m-1 variant-filled">{tag} ✕</button
+            >
+          {/each}
+        </footer>
+        <footer class="card-footer">Tagy: {round.tags.join(", ")}</footer>
+      </div>
+    {/each}
+  </div>
+</section>
+
+<section id="templateWithExercises">
+  <h2 class="h2">Template with Exercises</h2>
+
+  {#each $templateWithExercises as round, index (index)}
+    <div class="ml-4 mt-4">
+      <h3 class="h3">{round.name}</h3>
+      <p><strong>Typ:</strong> {round.type}</p>
+      <p><strong>Počet cviků:</strong> {round.exercisesAmount}</p>
+      <p><strong>Tagy:</strong> {round.tags.join(", ")}</p>
+      {#if round.exercises}
+        {#each round.exercises as exercise, exerIndex (exerIndex)}
+          <dl class="list-dl m-2">
+            <dt class="flex flex-row">
+              <span class="badge-icon p-4 variant-soft-primary mr-2"
+                >{exerIndex + 1}</span
+              >
+              <span class="mx-2"
+                ><h4 class="h4">
+                  {exercise.substitution
+                    ? `⚠️ ${exercise.name}`
+                    : exercise.name}
+                </h4></span
+              >
+            </dt>
+
+            <dd class="mx-8">
+              <span class="max-width: 65ch">{exercise.description}</span>
+            </dd>
+            <dd class="mx-8">
+              {#each exercise.tags as tag}
+                <span class="m-1 chip variant-filled">{tag}</span>
+              {/each}
+            </dd>
+            <dd class="mx-8">
+              <select
+                class="select max-w-sm"
+                bind:value={handPickedExercise[index][exerIndex]}
+                on:change={() => {
+                  const newExercise = findExerciseByName({
+                    allExercises,
+                    name: handPickedExercise[index][exerIndex],
+                  });
+                  if (!newExercise) {
+                    console.error(
+                      `No exercise with name: ${handPickedExercise[index][exerIndex]} found`
+                    );
+                    return;
+                  }
+                  templateWithExercises.update((rounds) => {
+                    rounds[index].exercises[exerIndex] = newExercise;
+                    return rounds;
+                  });
+                }}
+              >
+                <option value="Vyměň cvik" selected
+                  >Vyměň za jiný cvik se stejným tagem</option
+                >
+                {#each findExercisesByTags( { tags: exercise.tags, allExercises } ) as similarExercise}
+                  <option value={similarExercise.name}
+                    >{similarExercise.name}</option
+                  >
+                {/each}
+              </select>
+            </dd>
+            <dd class="flex flex-row mx-8 gap-2">
+              <span>
+                <select
+                  class="select"
+                  bind:value={selectedTagExercises[index][exerIndex]}
+                >
+                  {#each autocompleteTag as tag}
+                    <option value={tag.value}>{tag.label}</option>
+                  {/each}
+                </select>
+              </span>
+              <span>
+                <button
+                  class="btn variant-filled-primary"
+                  on:click={() => {
+                    const newExercise = findSingleExerciseByTag({
+                      allExercises,
+                      tag: selectedTagExercises[index][exerIndex],
+                    });
+                    if (!newExercise) {
+                      console.error(
+                        `No exercise with tag: ${selectedTagExercises[index][exerIndex]} found`
+                      );
+                      return;
+                    }
+                    templateWithExercises.update((rounds) => {
+                      rounds[index].exercises[exerIndex] = newExercise;
+                      return rounds;
+                    });
+                  }}>Vyměň za náhodný cvik s vybraným tagem</button
+                >
+              </span>
+            </dd>
+          </dl>
+        {/each}
+      {/if}
+      <hr />
     </div>
   {/each}
-</div>
-
-<h2 class="h2">Template with Tags</h2>
-
-<div class="flex" style="flex-wrap: wrap;">
-  {#each templateWithTags as round, index}
-    <div class="card m-5 w-20vw" style="width: 20vw">
-      <header class="card-header">{round.name}</header>
-      <section class="p-4">
-        <p>Typ: {round.type}</p>
-        <p>Počet cviků: {round.exercisesAmount}</p>
-      </section>
-      <footer class="card-footer">Tagy: {round.tags.join(", ")}</footer>
-    </div>
-  {/each}
-</div>
-
-<h2 class="h2">Template with Exercises</h2>
-
-{#each filledTemplate as exercise, index}
-  <h3 class="h3">{exercise.name}</h3>
-  <p><strong>Typ:</strong> {exercise.type}</p>
-  <p><strong>Počet cviků:</strong> {exercise.exercisesAmount}</p>
-  <p><strong>Tagy:</strong> {exercise.tags.join(", ")}</p>
-  {#if exercise.exercises}
-    <ol class="list m-4">
-      {#each exercise.exercises as foo, index}
-        <li>
-          <span class="badge-icon p-4 variant-soft-primary">{index + 1}</span>
-          <span>{foo.substitution ? `⚠️ ${foo.name}` : foo.name}</span>
-        </li>
-      {/each}
-    </ol>
-  {/if}
-  <hr />
-{/each}
+</section>

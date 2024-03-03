@@ -23,7 +23,7 @@ export const roundTemplate: RoundTemplate[] = [
     time: 240,
     exercisesAmount: 4,
     repeats: 2,
-    type: "stretch",
+    type: "strength",
   },
   {
     name: "HSS nebo břicho",
@@ -31,7 +31,7 @@ export const roundTemplate: RoundTemplate[] = [
     time: 240,
     exercisesAmount: 4,
     repeats: 2,
-    type: "stretch",
+    type: "strength",
   },
   {
     name: "Round 5",

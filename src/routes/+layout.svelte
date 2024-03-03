@@ -20,8 +20,8 @@
   </svelte:fragment>
   <!-- Page Route Content -->
   <div class="main">
-  <slot />
-</div>
+    <slot />
+  </div>
 </AppShell>
 
 <style>
