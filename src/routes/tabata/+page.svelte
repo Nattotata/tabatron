@@ -270,4 +270,45 @@
       <hr />
     </div>
   {/each}
+  <button
+    class="btn"
+    on:click={() => {
+      const data = JSON.stringify(get(templateWithExercises));
+      localStorage.setItem("tabata", data);
+    }}>Save</button
+  >
 </section>
+
+<section id="filledTemplate">
+  <h2 class="h2 mb-2 bumpUp">Output</h2>
+  {#each $templateWithExercises as round}
+    <h3 class="h3 mb-1">{round.name}: {round.tags.join(", ")}</h3>
+    <ol class="ml-4">
+      {#each round.exercises || [] as exercise, i}
+        <li>{i + 1}. {exercise.name}</li>
+      {:else}
+        <li>No exercises</li>
+      {/each}
+    </ol>
+  {/each}
+</section>
+
+<style>
+  @media print {
+    .bumpUp {
+      margin-top: -30px;
+    }
+    * {
+      display: none;
+    }
+    #filledTemplate,
+    #filledTemplate * {
+      display: block;
+    }
+    li,
+    h2,
+    h3 {
+      color: black;
+    }
+  }
+</style>

@@ -7,12 +7,12 @@
 <AppShell>
   <svelte:fragment slot="header">
     <!-- App Bar -->
-    <AppBar>
+    <AppBar regionRowHeadline="noPrint" regionRowMain="noPrint">
       <svelte:fragment slot="lead">
-        <strong class="text-xl uppercase">Skeleton</strong>
+        <strong class="text-xl uppercase noPrint">Skeleton</strong>
       </svelte:fragment>
       <svelte:fragment slot="trail">
-        <a class="btn btn-sm variant-ghost-surface" href="./tabata">
+        <a class="btn btn-sm variant-ghost-surface noPrint" href="./tabata">
           Tabata Generator
         </a>
       </svelte:fragment>
@@ -27,5 +27,10 @@
 <style>
   .main {
     margin: 30px;
+  }
+  @media print {
+    .noPrint {
+      display: none;
+    }
   }
 </style>
