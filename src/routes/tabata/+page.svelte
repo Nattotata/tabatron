@@ -32,6 +32,8 @@
       tags: ["Biceps", "Triceps"],
     })
   );
+
+  const today = new Date().toLocaleDateString().replaceAll("/", ".");
   // Store
 
   // State variables (mutable :( )
@@ -280,7 +282,7 @@
 </section>
 
 <section id="filledTemplate">
-  <h2 class="h2 mb-2 bumpUp">Output</h2>
+  <h2 class="h2 mb-2 bumpUp" contenteditable={true}>{today}</h2>
   {#each $templateWithExercises as round}
     <h3 class="h3 mb-1">{round.name}: {round.tags.join(", ")}</h3>
     <ol class="ml-4">
