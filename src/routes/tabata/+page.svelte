@@ -5,34 +5,28 @@
     Stepper,
     Step,
   } from "@skeletonlabs/skeleton";
-  import type {
-    Tag,
-    Exercise,
-    RoundTemplate,
-    TemplateWithTags,
-    FilledTemplate,
-  } from "./types";
+  import type { Tag, Exercise } from "./types";
   import { roundTemplate, autocompleteTag } from "./templates";
   import {
-    findExercisesByTag,
     findExercisesByTags,
-    findExercisesByType,
     findSingleExerciseByTag,
     fillTemplateWithTags,
     findExerciseByName,
     fillTemplateWithExercises,
+    printSection,
+    getTodaysDate,
   } from "./utils";
 
   import { get } from "svelte/store";
-  import { writable } from "svelte/store";
-
+  import { onMount } from "svelte";
+  import TagCard from "./TagCard.svelte";
   import { templateWithTags, templateWithExercises } from "./stores";
 
   // Data
   export let data;
   const allExercises: Exercise[] = data.exercises;
 
-  const today = new Date().toLocaleDateString().replaceAll("/", ".");
+  const today = getTodaysDate();
   // Store
 
   // State variables (mutable :( )
@@ -57,9 +51,12 @@
   }
 
   const handleChangeStep = (e: CustomEvent) => {
-    console.info(e.detail.step);
-    switch (e.detail.step) {
+    console.info("this is step number", e.detail.state.current);
+    switch (e.detail.state.current) {
       case 0:
+        break;
+      case 1:
+        console.info("refresh templateWithTags");
         templateWithTags.set(
           fillTemplateWithTags({
             debug,
@@ -69,40 +66,50 @@
           })
         );
         break;
-      case 1:
+      case 2:
         templateWithExercises.set(
           fillTemplateWithExercises({
             debug,
-            templateWithTags: get(templateWithTags),
+            templateWithTags: $templateWithTags,
             allExercises,
           })
         );
         break;
-      case 2:
-        break;
       case 3:
+        break;
+      case 4:
         console.log("print");
         window.print();
         break;
     }
   };
 
-  function printSection({ identifier }: { identifier: string }) {
-    if (!identifier) return;
-    const content = document.getElementById(identifier).innerHTML;
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-    doc.body.innerHTML = content;
-    iframe.contentWindow.print();
-    document.body.removeChild(iframe);
-  }
+  const initialize = () => {
+    templateWithTags.set(
+      fillTemplateWithTags({
+        debug,
+        inputChipList,
+        roundTemplate,
+        tagOptions: autocompleteTag,
+      })
+    );
+    templateWithExercises.set(
+      fillTemplateWithExercises({
+        debug,
+        templateWithTags: get(templateWithTags),
+        allExercises,
+      })
+    );
+  };
+  onMount(() => {
+    initialize();
+    console.info("template with tags", get(templateWithTags));
+  });
 </script>
 
 <h1 class="h1">Tabatron</h1>
 <Stepper
-  on:next={handleChangeStep}
+  on:step={handleChangeStep}
   on:complete={() => {
     printSection({ identifier: "outputForPrint" });
   }}
@@ -148,59 +155,13 @@
 
       <div class="flex" style="flex-wrap: wrap;">
         {#each $templateWithTags as round, index (index)}
-          <div class="card m-5 w-30vw">
-            <header class="card-header">{round.name}</header>
-            <section class="p-4">
-              <p>Typ: {round.type}</p>
-              <p>Počet cviků: {round.exercisesAmount}</p>
-            </section>
-            <footer class="card-footer">
-              <label class="label flex flex-row">
-                <select
-                  on:change={(e) => {
-                    const selectedTag = e.target.value;
-                    if (round.tags.includes(selectedTagTemplate)) {
-                      console.error("Tag already exists");
-                      return;
-                    }
-                    if (!selectedTag) {
-                      return;
-                    }
-                    templateWithTags.update((rounds) => {
-                      rounds[index].tags = [...rounds[index].tags, selectedTag];
-                      return rounds;
-                    });
-                    selectedTagTemplate[index] = selectedTag;
-                  }}
-                  class="select mt-2"
-                  bind:value={selectedTagTemplate[index]}
-                >
-                  <option value="" selected>Přidej tag:</option>
-                  {#each autocompleteTag as tag}
-                    {#if round.tags.includes(tag.value)}
-                      <option value={tag.value} disabled>{tag.value}</option>
-                    {:else}
-                      <option value={tag.value}>{tag.value}</option>
-                    {/if}
-                  {/each}
-                </select>
-              </label>
-              {#each round.tags as tag}
-                <button
-                  on:click={() => {
-                    templateWithTags.update((round) => {
-                      round[index].tags = round[index].tags.filter(
-                        (t) => t !== tag
-                      );
-                      return round;
-                    });
-                  }}
-                  class="chip m-1 variant-filled">{tag} ✕</button
-                >
-              {/each}
-            </footer>
-            <footer class="card-footer">Tagy: {round.tags.join(", ")}</footer>
-          </div>
+          <TagCard
+            {round}
+            {index}
+            {templateWithTags}
+            {selectedTagTemplate}
+            {autocompleteTag}
+          />
         {/each}
       </div>
     </section>
@@ -356,12 +317,6 @@
       display: none;
     }
     span {
-      display: none;
-    }
-    .stepper,
-    .stepper-header,
-    .stepper-content,
-    .badge {
       display: none;
     }
     .noPrint {

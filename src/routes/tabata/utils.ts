@@ -204,3 +204,24 @@ export const fillTemplateWithExercises = ({
     debug && console.info("fillTemplateWithExercise output", filledTemplate);
     return filledTemplate;
   };
+
+export const printSection = ({ identifier }: { identifier: string }) => {
+    if (!identifier) return;
+    const content = document.getElementById(identifier).innerHTML;
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+    doc.body.innerHTML = content;
+    iframe.contentWindow.print();
+    document.body.removeChild(iframe);
+  }
+
+// TODO: FIX IMPURE
+export const getTodaysDate = () => new Date()
+  .toLocaleDateString("cs", {
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  })
+  .replaceAll("/", ".")
