@@ -37,19 +37,21 @@
           >
         </dt>
 
-        <dd class="mx-8">
+        <dd class="ml-10">
           <span class="max-width: 65ch">{exercise.description}</span>
         </dd>
-        <dd class="mx-8">
+        <dd class="ml-10">
           {#each exercise.tags as tag}
             <span class="m-1 chip variant-filled">{tag}</span>
           {/each}
         </dd>
+        <dt class="ml-10">Vyměň za jiný cvik se stejným tagem:</dt>
         <dd class="mx-8">
           <select
             class="select max-w-sm"
             bind:value={handPickedExercise[index][exerIndex]}
             on:change={() => {
+              if (handPickedExercise[index][exerIndex] === "cancel") return;
               const newExercise = findExerciseByName({
                 allExercises,
                 name: handPickedExercise[index][exerIndex],
@@ -66,31 +68,22 @@
               });
             }}
           >
-            <option value="Vyměň cvik" selected>
-              Vyměň za jiný cvik se stejným tagem
-            </option>
+            <option value="cancel" selected>Zrušit výběr</option>
             {#each findExercisesByTags( { tags: exercise.tags, allExercises } ) as similarExercise}
-              <option value={similarExercise.name}>
+              <option id="handPickedExercise" value={similarExercise.name}>
                 {similarExercise.name}
               </option>
             {/each}
           </select>
         </dd>
+        <dt class="ml-10">Vyměň za náhodný cvik se zvoleným štítkem:</dt>
         <dd class="flex flex-row mx-8 gap-2">
           <span>
             <select
               class="select"
               bind:value={selectedTagExercises[index][exerIndex]}
-            >
-              {#each autocompleteTag as tag}
-                <option value={tag.value}>{tag.label}</option>
-              {/each}
-            </select>
-          </span>
-          <span>
-            <button
-              class="btn variant-filled-primary"
-              on:click={() => {
+              on:change={() => {
+                if (selectedTagExercises[index][exerIndex] === "cancel") return;
                 const newExercise = findSingleExerciseByTag({
                   allExercises,
                   tag: selectedTagExercises[index][exerIndex],
@@ -105,8 +98,13 @@
                   rounds[index].exercises[exerIndex] = newExercise;
                   return rounds;
                 });
-              }}>Vyměň za náhodný cvik s vybraným tagem</button
+              }}
             >
+              <option value="cancel" selected>Zrušit výběr</option>
+              {#each autocompleteTag as tag}
+                <option value={tag.value}>{tag.label}</option>
+              {/each}
+            </select>
           </span>
         </dd>
       </dl>

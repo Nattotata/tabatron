@@ -51,11 +51,12 @@
     }
   }
 
-  const handleChangeStep = (e: CustomEvent) => {
-    console.info("this is step number", e.detail.state.current);
+  const handleChangeStep = (e: {
+    detail: { state: { current: number; total: number }; step: number };
+  }): void => {
+    console.info("this is step state current", e.detail.state.current);
+    console.info("das is step number", e.detail.step);
     switch (e.detail.state.current) {
-      case 0:
-        break;
       case 1:
         console.info("refresh templateWithTags");
         templateWithTags.set(
@@ -68,6 +69,7 @@
         );
         break;
       case 2:
+        console.info("refresh templateWithExercises");
         templateWithExercises.set(
           fillTemplateWithExercises({
             debug,
@@ -151,7 +153,6 @@
 
     <section id="templateWithExercises">
       <h2 class="h2">Template with Exercises</h2>
-
       {#each $templateWithExercises as round, index (index)}
         <RoundWithExercises
           {round}
@@ -159,16 +160,8 @@
           {templateWithExercises}
           {allExercises}
           {selectedTagExercises}
-          {handPickedExercise}
         />
       {/each}
-      <button
-        class="btn"
-        on:click={() => {
-          const data = JSON.stringify(get(templateWithExercises));
-          localStorage.setItem("tabata", data);
-        }}>Save</button
-      >
     </section>
   </Step>
   <Step>
