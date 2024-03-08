@@ -38,9 +38,11 @@
         </dt>
 
         <dd class="ml-10">
-          <span class="max-width: 65ch">{exercise.description}</span>
+          <span class="max-width: 65ch"
+            >{exercise.description || "Bez popisku"}</span
+          >
         </dd>
-        <dd class="ml-10">
+        <dd class="ml-10 mt-10">
           {#each exercise.tags as tag}
             <span class="m-1 chip variant-filled">{tag}</span>
           {/each}
@@ -82,23 +84,6 @@
             <select
               class="select"
               bind:value={selectedTagExercises[index][exerIndex]}
-              on:change={() => {
-                if (selectedTagExercises[index][exerIndex] === "cancel") return;
-                const newExercise = findSingleExerciseByTag({
-                  allExercises,
-                  tag: selectedTagExercises[index][exerIndex],
-                });
-                if (!newExercise) {
-                  console.error(
-                    `No exercise with tag: ${selectedTagExercises[index][exerIndex]} found`
-                  );
-                  return;
-                }
-                templateWithExercises.update((rounds) => {
-                  rounds[index].exercises[exerIndex] = newExercise;
-                  return rounds;
-                });
-              }}
             >
               <option value="cancel" selected>Zrušit výběr</option>
               {#each autocompleteTag as tag}
@@ -106,6 +91,26 @@
               {/each}
             </select>
           </span>
+          <button
+            class="btn btn-primary variant-filled-secondary"
+            on:click={() => {
+              if (selectedTagExercises[index][exerIndex] === "cancel") return;
+              const newExercise = findSingleExerciseByTag({
+                allExercises,
+                tag: selectedTagExercises[index][exerIndex],
+              });
+              if (!newExercise) {
+                console.error(
+                  `No exercise with tag: ${selectedTagExercises[index][exerIndex]} found`
+                );
+                return;
+              }
+              templateWithExercises.update((rounds) => {
+                rounds[index].exercises[exerIndex] = newExercise;
+                return rounds;
+              });
+            }}>🎲</button
+          >
         </dd>
       </dl>
     {/each}
