@@ -5,15 +5,16 @@
     findSingleExerciseByTag,
   } from "./utils";
 
-  import type { Exercise } from "./types";
+  import type { Exercise, FilledTemplate } from "./types";
   import { autocompleteTag } from "./templates";
-  export let round;
+  import { templateWithExercises } from "./stores";
+  export let round: FilledTemplate;
   export let index: number;
   export let allExercises: Exercise[];
-  export let templateWithExercises;
-  export let selectedTagExercises;
-
-  let handPickedExercise = Array(100)
+  const amountOfTagsAndCancel = autocompleteTag.length + 1;
+  let selectedTag = Array.from({ length: amountOfTagsAndCancel }, () => []);
+  const amountOfExercises = allExercises.length;
+  let handPickedExercise = Array(amountOfExercises)
     .fill(null)
     .map(() => []);
 </script>
@@ -81,10 +82,7 @@
         <dt class="ml-10">Vyměň za náhodný cvik se zvoleným štítkem:</dt>
         <dd class="flex flex-row mx-8 gap-2">
           <span>
-            <select
-              class="select"
-              bind:value={selectedTagExercises[index][exerIndex]}
-            >
+            <select class="select" bind:value={selectedTag[index][exerIndex]}>
               <option value="cancel" selected>Zrušit výběr</option>
               {#each autocompleteTag as tag}
                 <option value={tag.value}>{tag.label}</option>
@@ -94,14 +92,14 @@
           <button
             class="btn btn-primary variant-filled-secondary"
             on:click={() => {
-              if (selectedTagExercises[index][exerIndex] === "cancel") return;
+              if (selectedTag[index][exerIndex] === "cancel") return;
               const newExercise = findSingleExerciseByTag({
                 allExercises,
-                tag: selectedTagExercises[index][exerIndex],
+                tag: selectedTag[index][exerIndex],
               });
               if (!newExercise) {
                 console.error(
-                  `No exercise with tag: ${selectedTagExercises[index][exerIndex]} found`
+                  `No exercise with tag: ${selectedTag[index][exerIndex]} found`
                 );
                 return;
               }

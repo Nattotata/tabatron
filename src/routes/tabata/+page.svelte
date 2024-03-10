@@ -8,17 +8,12 @@
   import type { Tag, Exercise } from "./types";
   import { roundTemplate, autocompleteTag } from "./templates";
   import {
-    findExercisesByTags,
-    findSingleExerciseByTag,
     fillTemplateWithTags,
-    findExerciseByName,
     fillTemplateWithExercises,
     printSection,
     getTodaysDate,
   } from "./utils";
 
-  import { get } from "svelte/store";
-  import { onMount } from "svelte";
   import TagCard from "./TagCard.svelte";
   import RoundWithExercises from "./RoundWithExercises.svelte";
   import { templateWithTags, templateWithExercises } from "./stores";
@@ -37,9 +32,7 @@
   let selectedTagExercises = Array(100)
     .fill(null)
     .map(() => []);
-  let handPickedExercise = Array(100)
-    .fill(null)
-    .map(() => []);
+
   let inputChip = "";
   let inputChipList: Tag[] = [];
   const debug: boolean = false;
@@ -54,11 +47,8 @@
   const handleChangeStep = (e: {
     detail: { state: { current: number; total: number }; step: number };
   }): void => {
-    console.info("this is step state current", e.detail.state.current);
-    console.info("das is step number", e.detail.step);
     switch (e.detail.state.current) {
       case 1:
-        console.info("refresh templateWithTags");
         templateWithTags.set(
           fillTemplateWithTags({
             debug,
@@ -69,7 +59,6 @@
         );
         break;
       case 2:
-        console.info("refresh templateWithExercises");
         templateWithExercises.set(
           fillTemplateWithExercises({
             debug,
@@ -81,7 +70,6 @@
       case 3:
         break;
       case 4:
-        console.log("print");
         window.print();
         break;
     }
@@ -154,13 +142,7 @@
     <section id="templateWithExercises">
       <h2 class="h2">Template with Exercises</h2>
       {#each $templateWithExercises as round, index (index)}
-        <RoundWithExercises
-          {round}
-          {index}
-          {templateWithExercises}
-          {allExercises}
-          {selectedTagExercises}
-        />
+        <RoundWithExercises {round} {index} {allExercises} />
       {/each}
     </section>
   </Step>
