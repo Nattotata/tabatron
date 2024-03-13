@@ -78,7 +78,7 @@
 
 <h1 class="h1">Tabatron</h1>
 <Stepper
-  on:step={handleChangeStep}
+  on:next={handleChangeStep}
   on:complete={() => {
     printSection({ identifier: "outputForPrint" });
   }}
