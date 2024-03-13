@@ -33,6 +33,12 @@
   <section class="p-4">
     <p>Typ: {round.type}</p>
     <p>Počet cviků: {round.exercisesAmount}</p>
+    <input
+      class="input"
+      type="range"
+      bind:value={round.exercisesAmount}
+      max={12}
+    />
   </section>
 
   <footer class="card-footer">
