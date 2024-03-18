@@ -1,5 +1,5 @@
 import type { PageLoad } from "./$types";
-import { mock_data } from "./data";
+import data from "./data.json";
 
 const usingMockData = true;
 
@@ -12,12 +12,11 @@ const consolidateTags = (input: any) => {
   };
 };
 
-// link to spreadsheet with data
-// in .env file now
-const url = ""
+const url = "";
 export const load: PageLoad = async ({ fetch, params }) => {
   if (usingMockData) {
-    return { exercises: mock_data };
+    const exercises = data.map((exercise: any) => consolidateTags(exercise));
+    return { exercises };
   }
   const res = await fetch(url);
   const item = await res.json();

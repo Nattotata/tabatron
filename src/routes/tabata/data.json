@@ -1,0 +1,1568 @@
+[
+  {
+    "Název": "Panák",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Chůze nebo běh na místě",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Stehna",
+    "Tag 2": "Lýtka",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Vytáčení dlaň na dlaň",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Loket - koleno",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kloubní rotace",
+    "Popis": "Postupujeme od hlavy až ke kotníkům. Na obě strany uděláme minimálně 5 kroužkůdo každé ze stran: hlava, ramenný kloub, předloktí, zápěstí, kyčel jako celek, kolena, kotníky. V závěru rozhýbeme prsty na rukou a na nohou.",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Střídavé přepažování horních končetin",
+    "Popis": "Střídavé předpažování horních končetin ze 6ti měsíční polohy. Možné stížení -- nadzvednutí kolen nebo přidávání zvedání noh.",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Chipsy-cola",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Sumo dřepy",
+    "Popis": "Sumo dřep -- špičky von! (double, pridať prácu rúk)",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "Stehna",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Klik",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Meditace",
+    "Popis": "",
+    "Typ": "Cooldown",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Plavání",
+    "Popis": "Kmítání rukama a nohama v leže (na suchu).",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Most",
+    "Popis": "Zvedání zadku (variace na špičkách).",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Plank",
+    "Popis": "Feel the burn.",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Stahování kladky v sedě",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Tlačení protilehlou rukou do kolena v leže",
+    "Popis": "druhá noha může zůstat na podložce",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Horizontální abdukce v sedě",
+    "Popis": "dětský sed nebo sed na patách",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Hvězdice",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kmitání vpřed - vzad v planku na předloktích",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "Komplexní",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Střídavé zvedání kolen v planku na kolenách",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Pukrlé - výpad křížmo",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Abdukce v kyčli v pozici na 4",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Lifting + box",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dřep",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "Stehna",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výkopy křížem",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Rotace v trupu s rozpaženýma rukama",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Mezilopatkové přitahy na úzko",
+    "Popis": "predklon, paže na úzko, kladivový úchop jednoručiek",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Triceps",
+    "Tag 3": "",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "Loďka",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "HSS",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výtlaky jednoruček nad hlavu v stoji",
+    "Popis": "stížení na jedné noze",
+    "Typ": "Strength",
+    "Tag 1": "Triceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "Bicepsový zdvih",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "Lifting s bicepsovým zdvihem",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Biceps",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "Kyvadlo",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Tricepsový zdvih",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Triceps",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "Horolezec",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Břicho",
+    "Tag 2": "Komplexní",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Koleno- koleno - stop",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Predpažovanie v stoji - jednoručky nadhmatom",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Rozpažování v předkloně",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zanožování na čtyrech",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Malé kroužky (ruce rozpažené) s pochodováním / během",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Ramena",
+    "Tag 3": "Biceps",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Plank se střídavým zanožováním",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "Hýždě",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Abdukce v kyčli v leže na boku",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Běh s horizontální abdukcí",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Záda",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zakopávání",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Stahování “kladky” v poloze lehu na břiše",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "Lýtka",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Tlačení protilehlou rukou do kolena v stabilizované (stížené) 6. měsíční poloze",
+    "Popis": "druhá noha zůstává na podložce",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kočičí hřbet v sedu",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "“Dopravný policajt”",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Plank na boku",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Brušák - rôzne variácie",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dynamické zanožování",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Hýždě",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výpad vzad",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výpad vpřed",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výpad vpřed a vzad",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dřep s výponem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "Lýtka",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Překládání",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Překádání s klikem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Břicho",
+    "Tag 3": "Ramena",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kliky na úzko",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Tricepsový kliky ",
+    "Popis": "zadok na zemi s pokrcenymi laktami, s vydychom vystieras lakte, trup = zataz, nesnazis sa aktivovat brucho",
+    "Typ": "Strength",
+    "Tag 1": "Triceps",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Z dámského kliku do střechy",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Střecha",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Pozice dítěte",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Předpažování s ručníkem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Běh na místě s boxováním",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "\"Švihadlo\"",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Šikmý brušák - strielanie",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Plank s poklepáním po rameně",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dřep double",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Stovka",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "HSS",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Izometria v sumo drepe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Most na jedné noze",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Klik z pozice na 4",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dřep s výkopem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Letím v dynamice",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "Stehna",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zvedání nohy do boku “za provázek”",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "“Super(wo)man”",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Brouk - pokládáme končetiny křížem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "HSS",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zdvih nohou v leže - statika (Leg Lift Hold)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "zdvih nohou s vytáčaním",
+    "Popis": "vrch tela nad podložkou, “ťukes prstom”",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Bočný plank",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dotyk loket - koleno v bočnom planku",
+    "Popis": "spodná noha pokrčená, ruka na predlaktí",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výpad vpřed s bicepsovým zdvihem",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "Biceps",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Twists",
+    "Popis": "Rotácie v sede v záklone s predpaženými rukami - lehčí verze noze na podlozžce",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Bočné výpady s dotykom krížom k nohe",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Hýždě",
+    "Tag 3": "Stehna",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Statický most s vystretými pažam",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Skracovačky s nohami zdvihnutými v pravom uhle, ruky pred sebou",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "\"Medveď\" so striedavým dotykom ramien",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "HSS",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Úklony do strán v stoji s rukami nad hlavou so závažím",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "Biceps",
+    "Tag 3": "Triceps",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Koleno-koleno-stop v stoji",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Beh do strany",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Aktivácia medzilopatkových svalov (ruky do V)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Střídavé pokládání nohou z aktivované 3m polohy",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "HSS",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Z dosky na dlaniach do dosky na predlaktiach",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "Prsa",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Beh v stoji  + klik",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Ramena",
+    "Tag 3": "Stehna",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Podsadená panva, dlane dopredu - ruky nad hlavu - nádych a dole - výdych",
+    "Popis": "",
+    "Typ": "Cooldown",
+    "Tag 1": "Záda",
+    "Tag 2": "Komplexní",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Čašník",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Ruky “na casnika” pri tele, s vydychom laktami pohybujem do zadu",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Z pozcie čašníka s lakťami vo flexii vzadu zagulatit chrbat ruky hore - s nadychom",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Palicou pred telo a dozadu - zvacsovat rozsah / v podrepe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Na siroko - cez jedno rameno za chrbat nadych, pred telo vydych",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Za chrbtom - palicu popri tele az dole",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Za zadkom - maly pohyb dole",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Balanc na 1 nohe, tlacim palcom do zeme",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Dlan na kyclovu kost predsunuta lopatka oproti nadych, do casnika ruka von vydych",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Uklon v podrepe s rozpazenymi rukami. Pohlad za rukou hore",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "sed na patach - vpredu spajam palce na rukach vzadu malicky",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Lah na bruchu, ruky svietnik - zdvih koncatin do kriza",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "V nizkej kobre cvicenie krcnej chrbtice - brada na hrudnik, pohlad hore",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Záda",
+    "Tag 3": "Břicho",
+    "Pomucky": ""
+  },
+  {
+    "Název": "V pritahy v sede na patach",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "orol",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Ruky na uzko podhmatom pritah k telu a zagulatit a nad hlavu nadych",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "V podrepe palica za chrbtom vytacame laket koleno k sebe s vydychom + v uklone ruky nad hlavu",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Na uzko vystrete ruky pred telom vytacame ruky do stran",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Brusaky s palicou",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Pritah stehna k trupu s palicou - strecing - da sa posilovat brucho dynamika trupom",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Na bruchu dole pred celo do zadu na lopatky",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Palica vzadu a dviham nohy",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "V detskom sede stahovanie kladky so striedavym zdvihanim noh",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "V detskom sede palica za chrbtom vytacanie sa do stran",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Palica za krkom predklon a striedave dvihanie noh",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Rozkrocene nohy uklony s palicou a za chrbat kladka",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": "tyčka"
+  },
+  {
+    "Název": "Klik - na podložku + potiahnutie lakťou vzad",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Drep, prerúčkujem vpred (pozriem za pravou dlaňou, pozriem za ľavou dlaňou) prerúčkujem vzad",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Reach through",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Šikmé skracovačky",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": " bicykel",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Prenášanie váhy so vzpažením súhlasnej ruky",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Drep s vytočením a úderom do strany",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "Biceps",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Prenášanie váhy s bicepsovým zdvihom",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "Biceps",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Prenášanie váhy s horizontálnou abdukciou",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Záda",
+    "Tag 3": "Stehna",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Obe ruky tlačím do jedného kolena, druhú nohu pokladám na zem - nohy striedam",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Priťahovanie sa k zdvihnutým nohám",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Step touch s malými krúžkami",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Triceps",
+    "Tag 3": "Ramena",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Step touch s tlakmi nad hlavu",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "3 poskoky v sumo drepe",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "Lýtka",
+    "Pomucky": ""
+  },
+  {
+    "Název": "V sede v zaklone opor o dlane - Príťahy nôh k hrudníku s otvorenými kolenami",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Břicho",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kráčanie v sumo drepe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Havyk raises",
+    "Popis": " jedna ruka pred seba, jedna rozpažiť (nadhmatom) - ruky meníme",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Biceps",
+    "Tag 3": "Triceps",
+    "Pomucky": "jednoručky"
+  },
+  {
+    "Název": "\"Volejbal\"",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "lifting + točenie rúk v klubíčku",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Drep s rolovaním",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "Hýždě",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Aktivace břicha vleže - nácvik dýchání",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zvedání nohy a paže do kříže ve vzporu klečmo",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "HSS",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zvedání hlavy a vrchu zad vleže na břiše",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "“Sťahovanie kladky” v stoji až k trupu s prenášaním váhy",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Drep s preskokom / prekročením (k sebe - od seba)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Double drep s výponom",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Striedavé výpony na špičky v sumo drepe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Zanoženie a horizontálna abdukcia v kyčli",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Vykročenie / preskok k dlani v planku a vytočenie sa za tou istou rukou",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Double dřep s výtlakem nad hlavu",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Stehna",
+    "Tag 2": "Hýždě",
+    "Tag 3": "Ramena",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Brušák s rukami pred sebou a 2 pulzami v hornej polohe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Skracovačky - “Masáž srdca”",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Nožnice v leže ",
+    "Popis": "(Striedavé dvíhanie nôh v ľahu na podložke s podporou o lakte)",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Brušák s malým rozsahom s nohami v žabke",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Leg extension v ľahu na zádech - z pravých uhlov do vystretia, ruky pod zadkom",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kobra v dynamike",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Spúšťanie nôh s 2 pulzami",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Holub",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "Stehna",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Pozícia dieťaťa s vychýlením do strany",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Kobra",
+    "Popis": "",
+    "Typ": "Stretch",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Rotácia ramien v pripažení v ľahu na bruchu  (dlane k zemi - palec dohora, hlava nad podložkou)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Rozpažovanie v ľahu na bruchu (palce dohora, hlava nad podložkou)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Extrarotácie ramien v ľahu na bruchu (hlava nad podlozkou, ruky svietnik, palec dohora, hybem iba predlaktim)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Extenzie nôh v ľahu na bruchu",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Hýždě",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Hyper rotácie trupu na štyroch",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Horizontální abdukce s výtlakom nad hlavu s jednoručkama v chůzi",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Záda",
+    "Tag 2": "Triceps",
+    "Tag 3": "Komplexní",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Striedavé vzpažovanie z pripaženia s jednoručkama v chůzi",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Triceps",
+    "Tag 3": "Komplexní",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Velké kruhy s jednoručkama v podrepe",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Ramena",
+    "Tag 2": "Triceps",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Predpažovanie a rozpažovanie v chůzi (jednoručky kladivovým úchopom)",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "Triceps",
+    "Tag 3": "Ramena",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Flexe v lokti s rozpaženými rukami + nohy side to side",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "Komplexní",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Flexe v lokti s predpazenimi pazami",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Bicepsovy zdvih s predpazenymi pazami + s rozpazenymi pazami",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Biceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Podávanie predmetu medzi rukami a nohami",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Břicho",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Třicepsový klik na 4",
+    "Popis": "",
+    "Typ": "Strength",
+    "Tag 1": "Triceps",
+    "Tag 2": "Ramena",
+    "Tag 3": "",
+    "Pomucky": ""
+  },
+  {
+    "Název": "Výpady do boku s preskokom + predpažovanie",
+    "Popis": "",
+    "Typ": "Cardio",
+    "Tag 1": "Komplexní",
+    "Tag 2": "",
+    "Tag 3": "",
+    "Pomucky": ""
+  }
+]
