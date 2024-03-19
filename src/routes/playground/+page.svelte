@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { RadioGroup, RadioItem } from "@skeletonlabs/skeleton";
-  let value: number = 0;
+  export let data;
+  console.info(data);
 </script>
 
-<RadioGroup>
-  <RadioItem bind:group={value} name="justify" value={0}>(label)</RadioItem>
-  <RadioItem bind:group={value} name="justify" value={1}>(label)</RadioItem>
-  <RadioItem bind:group={value} name="justify" value={2}>(label)</RadioItem>
-</RadioGroup>
+{#each data.rows as hehe}
+  <p>Jmeno: {hehe.name}</p>
+  <p>Otrok: {hehe.owner}</p>
+  <hr />
+{/each}

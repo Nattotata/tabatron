@@ -26,7 +26,7 @@
   // Store
 
   // State variables (mutable :( )
-
+  let inputFile = "";
   // TODO FIX THIS
   let selectedTagTemplate: string[] = [];
   let selectedTagExercises = Array(100)
@@ -138,6 +138,36 @@
 
   <Step>
     <svelte:fragment slot="header">Šablona s cviky</svelte:fragment>
+    <button
+      class="input btn"
+      on:click={() => {
+        const json = JSON.stringify($templateWithExercises);
+        const blob = new Blob([json], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${today}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }}>Ulož json</button
+    >
+    <input class="input" type="file" bind:value={inputFile} />
+    <button
+      on:click={() => {
+        const file = inputFile;
+        const reader = new FileReader();
+        console.error(typeof file);
+        console.error(file);
+        reader.onload = function (e) {
+          const contents = e.target.result;
+          const json = JSON.parse(contents);
+          templateWithExercises.set(json);
+        };
+        reader.readAsText(file);
+      }}>Načti template ze souboru</button
+    >
 
     <section id="templateWithExercises">
       <h2 class="h2">Template with Exercises</h2>
