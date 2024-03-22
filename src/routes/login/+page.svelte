@@ -1,33 +1,13 @@
 <script lang="ts">
-  import { focusTrap } from "@skeletonlabs/skeleton";
+  import type { PageData, ActionData } from "./$types";
 
-  let isFocused: boolean = true;
+  export let data: PageData;
+
+  export let form: ActionData;
 </script>
 
-<h1>Register</h1>
-
-<form use:focusTrap={isFocused} method="POST" action="?/register">
-  <label class="label">
-    <span>Jméno </span>
-    <input
-      name="name"
-      class="input"
-      title="Input (text)"
-      type="text"
-      placeholder="input text"
-    />
-  </label>
-
-  <label class="label">
-    <span>Heslo</span>
-    <input
-      name="password"
-      class="input"
-      title="Input (password)"
-      type="password"
-      placeholder="password"
-    />
-  </label>
-
-  <button class="btn variant-filled-primary">Submit</button>
-</form>
+{#if form?.status === 201}
+  <!-- this message is ephemeral; it exists because the page was rendered in
+		   response to a form submission. it will vanish if the user reloads -->
+  <p>Successfully logged in! Welcome back, {form?.token}</p>
+{/if}

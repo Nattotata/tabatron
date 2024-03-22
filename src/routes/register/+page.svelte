@@ -1,11 +1,25 @@
 <script lang="ts">
   import { focusTrap } from "@skeletonlabs/skeleton";
+  import type { PageData, ActionData } from "./$types";
 
+  export let data: PageData;
+
+  export let form: ActionData;
+
+  import { onMount } from "svelte";
+  onMount(() => {
+    if (form?.status === 201) {
+      localStorage.setItem("JWT", form.token);
+      localStorage.setItem("myCat", "Tom");
+    }
+
+    console.info(form?.parsedToken);
+    console.log("the component has mounted");
+  });
   let isFocused: boolean = true;
 </script>
 
 <h2>Log in</h2>
-
 <form use:focusTrap={isFocused} method="POST" action="?/login">
   <label class="label">
     <span>Email</span>
@@ -72,3 +86,11 @@
 
   <button class="btn variant-filled-primary">Registrovat</button>
 </form>
+
+{#if form?.status === 201}
+  <p>
+    {form.token}
+    Ahoj {form?.parsedToken?.email}
+  </p>
+{/if}
+Ahoj {data.name}

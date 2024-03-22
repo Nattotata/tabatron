@@ -1,4 +1,7 @@
 <script lang="ts">
+  import type { PageData } from "./$types";
+  export let data;
 </script>
 
-TODO
+<p>Jméno: {data.name}</p>
+<p>Email: {data.email}</p>

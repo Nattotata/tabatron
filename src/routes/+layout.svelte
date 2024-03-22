@@ -1,6 +1,9 @@
 <script lang="ts">
   import "../app.postcss";
   import { AppShell, AppBar } from "@skeletonlabs/skeleton";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 </script>
 
 <!-- App Shell -->
@@ -14,6 +17,9 @@
       <svelte:fragment slot="trail">
         <a class="btn btn-sm variant-ghost-surface noPrint" href="./tabata">
           Tabata Generator
+        </a>
+        <a class="btn btn-sm variant-ghost-surface noPrint" href="./profile">
+          {data.name}
         </a>
       </svelte:fragment>
     </AppBar>

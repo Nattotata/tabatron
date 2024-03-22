@@ -1,6 +1,7 @@
 import { sql } from "@vercel/postgres";
 import "dotenv/config";
 import bcrypt from "bcrypt";
+import { signToken } from "$lib/jwt";
 
 type CreateUserInput = {
   name: FormDataEntryValue;
@@ -29,16 +30,15 @@ export const createUser = async ({
   } catch (e) {
     console.error("not tada", e);
   }
+  return "good";
 };
 
 export const checkLogin = async ({ email, password }) => {
-  console.info(`mail ${email}`);
   const dbData = await sql`SELECT * from users where email = ${email};`;
-  console.info("db data", dbData);
-  const salt = await bcrypt.genSalt();
   const pwFromDb = dbData.rows[0].password;
   const hashedPw = await bcrypt.hash(password, dbData.rows[0].salt);
 
-  console.info("passwords", pwFromDb, hashedPw, pwFromDb === hashedPw);
+  const token = signToken({ email });
   // https://www.npmjs.com/package/jsonwebtoken
+  return token;
 };
