@@ -1,28 +1,22 @@
 <script lang="ts">
   import "../app.postcss";
-  import { AppShell, AppBar } from "@skeletonlabs/skeleton";
+  import { AppShell, Toast } from "@skeletonlabs/skeleton";
   import type { PageData } from "./$types";
-
   export let data: PageData;
+  import Header from "$components/Header.svelte";
+  import { userInfo } from "$stores/user";
+  import { initializeStores } from "@skeletonlabs/skeleton";
+
+  initializeStores();
+  userInfo.set({ name: data.name, email: data.email });
 </script>
 
+<Toast />
 <!-- App Shell -->
 <AppShell>
+  <Header />
   <svelte:fragment slot="header">
     <!-- App Bar -->
-    <AppBar regionRowHeadline="noPrint" regionRowMain="noPrint">
-      <svelte:fragment slot="lead">
-        <strong class="text-xl uppercase noPrint">Skeleton</strong>
-      </svelte:fragment>
-      <svelte:fragment slot="trail">
-        <a class="btn btn-sm variant-ghost-surface noPrint" href="./tabata">
-          Tabata Generator
-        </a>
-        <a class="btn btn-sm variant-ghost-surface noPrint" href="./profile">
-          {data.name}
-        </a>
-      </svelte:fragment>
-    </AppBar>
   </svelte:fragment>
   <!-- Page Route Content -->
   <div class="main">

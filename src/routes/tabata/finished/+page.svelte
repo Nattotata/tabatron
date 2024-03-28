@@ -1,10 +1,12 @@
 <script lang="ts">
   import { get } from "svelte/store";
-  import { templateWithExercises } from "../stores";
+  import { templateWithExercises } from "$stores/exercises";
   import { onMount } from "svelte";
   import { browser } from "$app/environment";
   const data =
-    (browser && JSON.parse(localStorage.getItem("tabata") || "[]")) || [];
+    (browser &&
+      JSON.parse(localStorage.getItem("tabata") || "[]")) ||
+    [];
   console.info(data);
   console.info(get(templateWithExercises));
 </script>

@@ -6,7 +6,10 @@
     Step,
   } from "@skeletonlabs/skeleton";
   import type { Tag, Exercise } from "./types";
-  import { roundTemplate, autocompleteTag } from "./templates";
+  import {
+    roundTemplate,
+    autocompleteTag,
+  } from "./templates";
   import {
     fillTemplateWithTags,
     fillTemplateWithExercises,
@@ -16,7 +19,10 @@
 
   import TagCard from "./TagCard.svelte";
   import RoundWithExercises from "./RoundWithExercises.svelte";
-  import { templateWithTags, templateWithExercises } from "./stores";
+  import {
+    templateWithTags,
+    templateWithExercises,
+  } from "$stores/exercises";
 
   // Data
   export let data;
@@ -38,14 +44,22 @@
   const debug: boolean = false;
 
   function onInputChipSelect(event: CustomEvent): void {
-    if (inputChipList.includes(event.detail.value) === false) {
-      inputChipList = [...inputChipList, event.detail.value];
+    if (
+      inputChipList.includes(event.detail.value) === false
+    ) {
+      inputChipList = [
+        ...inputChipList,
+        event.detail.value,
+      ];
       inputChip = "";
     }
   }
 
   const handleChangeStep = (e: {
-    detail: { state: { current: number; total: number }; step: number };
+    detail: {
+      state: { current: number; total: number };
+      step: number;
+    };
   }): void => {
     switch (e.detail.state.current) {
       case 1:
@@ -105,7 +119,10 @@
           max={3}
         />
 
-        <div class="card w-full max-h-48 p-4 overflow-y-auto" tabindex="-1">
+        <div
+          class="card w-full max-h-48 p-4 overflow-y-auto"
+          tabindex="-1"
+        >
           <Autocomplete
             bind:input={inputChip}
             options={autocompleteTag}
@@ -118,7 +135,9 @@
   </Step>
 
   <Step>
-    <svelte:fragment slot="header">Šablona se štítky</svelte:fragment>
+    <svelte:fragment slot="header"
+      >Šablona se štítky</svelte:fragment
+    >
     <section id="templateWithTags">
       <h2 class="h2">Template with Tags</h2>
 
@@ -137,12 +156,16 @@
   </Step>
 
   <Step>
-    <svelte:fragment slot="header">Šablona s cviky</svelte:fragment>
+    <svelte:fragment slot="header"
+      >Šablona s cviky</svelte:fragment
+    >
     <button
       class="input btn"
       on:click={() => {
         const json = JSON.stringify($templateWithExercises);
-        const blob = new Blob([json], { type: "application/json" });
+        const blob = new Blob([json], {
+          type: "application/json",
+        });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -153,7 +176,11 @@
         URL.revokeObjectURL(url);
       }}>Ulož json</button
     >
-    <input class="input" type="file" bind:value={inputFile} />
+    <input
+      class="input"
+      type="file"
+      bind:value={inputFile}
+    />
     <button
       on:click={() => {
         const file = inputFile;
@@ -172,7 +199,11 @@
     <section id="templateWithExercises">
       <h2 class="h2">Template with Exercises</h2>
       {#each $templateWithExercises as round, index (index)}
-        <RoundWithExercises {round} {index} {allExercises} />
+        <RoundWithExercises
+          {round}
+          {index}
+          {allExercises}
+        />
       {/each}
     </section>
   </Step>
@@ -183,7 +214,9 @@
       <h3 class="bumpUp" contenteditable={true}>{today}</h3>
       {#each $templateWithExercises as round}
         <p style="margin-top: 0.em; margin-bottom: 0.5em">
-          <strong>{round.name}: {round.tags.join(", ")}</strong>
+          <strong
+            >{round.name}: {round.tags.join(", ")}</strong
+          >
         </p>
         <div class="ml-4">
           {#each round.exercises || [] as exercise, i}
