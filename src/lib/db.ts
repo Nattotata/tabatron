@@ -29,16 +29,91 @@ export const createUser = async ({
     );
   } catch (e) {
     console.error("not tada", e);
+    return "RIP";
   }
   return "good";
 };
 
-export const checkLogin = async ({ email, password }) => {
-  const dbData = await sql`SELECT * from users where email = ${email};`;
-  const pwFromDb = dbData.rows[0].password;
-  const hashedPw = await bcrypt.hash(password, dbData.rows[0].salt);
+export const removeUser = async ({ name, email }) => {
+  try {
+    await sql`
+    DELETE FROM users WHERE email = ${email} AND name = ${name};
+    `;
+  } catch (e) {
+    console.error(
+      `Couldn't remove user ${name} with email ${email} from database`,
+      e
+    );
+    return { success: false };
+  }
+  return { success: true };
+};
 
-  const token = signToken({ email });
-  // https://www.npmjs.com/package/jsonwebtoken
-  return token;
+export const changePassword = async ({
+  email,
+  oldPassword,
+  newPassword,
+}) => {
+  const getPasswordAndSalt = async ({ email }) => {
+    try {
+      const data = await sql`
+      SELECT salt, password
+      FROM users
+      WHERE email = ${email}
+      ;`;
+      return data;
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  const dataFromDb = getPasswordAndSalt({ email });
+  const oldHashedPw = bcrypt.hash(
+    oldPassword,
+    dataFromDb[0].salt
+  );
+  if (oldPassword === oldHashedPw) {
+    return "This is not correct old pw";
+  }
+  const salt = bcrypt.salt();
+  const newHashedPw = bcrypt.hash(newPassword, salt);
+  try {
+    await sql`
+    UPDATE users
+    SET password = ${newHashedPw},
+    salt = ${salt}
+    WHERE email = ${email}
+    ;`;
+  } catch (e) {
+    console.error("error updating password", e);
+  }
+};
+
+const getUserByEmail = async (email: string) => {
+  try {
+    const dbData =
+      await sql`SELECT * from users where email = ${email};`;
+    return dbData.rows[0];
+  } catch (e) {
+    console.error(`Couldn't find user: ${email}`, e);
+    return;
+  }
+};
+
+export const checkLogin = async ({
+  inputEmail,
+  inputPassword,
+}: {
+  inputEmail: string;
+  inputPassword: string;
+}) => {
+  const dbData = await getUserByEmail(inputEmail);
+  if (!dbData) {
+    return { name: "", email: "", status: 404 };
+  }
+  const { name, email, password, salt } = dbData;
+  const hashedPw = await bcrypt.hash(inputPassword, salt);
+  if (password === hashedPw) {
+    return { name, email, status: 200 };
+  }
+  return { name: "", email: "", status: 401 };
 };
