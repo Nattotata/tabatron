@@ -9,7 +9,11 @@ type ResponseObject = {
   message: string;
   status: Status;
   data?: {
-    [propName: string]: string;
+    name?: string;
+    password?: string;
+    email?: string;
+    salt?: string;
+    role?: string;
   };
 };
 
@@ -33,8 +37,7 @@ const checkUserInput = ({
   if (!name || !email || !password) {
     return {
       status: "error",
-      message:
-        "Username, email, password should be non-empty.",
+      message: "Username, email, password should be non-empty.",
     };
   }
   if (!validator.isAlpha(name)) {
@@ -55,6 +58,15 @@ const checkUserInput = ({
   };
 };
 
+const hashPassword = async (password: string) => {
+  if (!password) {
+    new Error("Password should not be empty.");
+  }
+  const salt = await bcrypt.genSalt();
+  const hash = await bcrypt.hash(password, salt);
+  return { hash, salt };
+};
+
 /**
  * Hashes a given password.
  * Inserts user, email, hashedPw, and salt
@@ -72,13 +84,11 @@ export const createUser = async ({
       message: check.message,
     };
   }
-  const salt = await bcrypt.genSalt();
-  const hashedPw = await bcrypt.hash(password, salt);
-
+  const { hash, salt } = await hashPassword(password);
   try {
     await sql`
     INSERT INTO users (name, email, password, salt)
-    VALUES (${name}, ${email}, ${hashedPw}, ${salt});`;
+    VALUES (${name}, ${email}, ${hash}, ${salt});`;
     return {
       status: "success",
       message: "User created successfully.",
@@ -98,10 +108,7 @@ export const removeUser = async ({
   name: string;
   email: string;
 }): Promise<ResponseObject> => {
-  if (
-    !validator.isEmail(email) ||
-    !validator.isAlpha(name)
-  ) {
+  if (!validator.isEmail(email) || !validator.isAlpha(name)) {
     return {
       status: "error",
       message: "Something is wrong with the name or email.",
@@ -111,28 +118,27 @@ export const removeUser = async ({
     await sql`
     DELETE FROM users WHERE email = ${email} AND name = ${name};
     `;
+    return {
+      status: "success",
+      message: `User ${name} is removed.`,
+    };
   } catch (e) {
     return {
       status: "error",
       message: `Couldn't remove user ${name} with email ${email} from database`,
     };
   }
-  return {
-    status: "success",
-    message: `User ${name} is removed.`,
-  };
 };
 
-const getPasswordAndSalt = async (
-  email: string
-): Promise<ResponseObject> => {
+const getPasswordAndSalt = async (email: string): Promise<ResponseObject> => {
   try {
     const { rows } = await sql`
     SELECT salt, password
     FROM users
     WHERE email = ${email}
     ;`;
-    const { salt, password } = rows[0];
+    const salt = rows[0].salt.toString();
+    const password = rows[0].password.toString();
     if (!salt || !password) {
       return {
         status: "error",
@@ -171,15 +177,11 @@ export const changePassword = async ({
 
   const oldSalt = dataFromDb.data?.salt || "";
   const hashedPwFromDb = dataFromDb.data?.password || "";
-  const oldHashedPw = await bcrypt.hash(
-    oldPassword,
-    oldSalt
-  );
+  const oldHashedPw = await bcrypt.hash(oldPassword, oldSalt);
   if (hashedPwFromDb !== oldHashedPw) {
     return {
       status: "error",
-      message:
-        "Old password does not match the password in database.",
+      message: "Old password does not match the password in database.",
     };
   }
   const salt = await bcrypt.genSalt();
@@ -200,9 +202,7 @@ export const changePassword = async ({
   }
 };
 
-const getUserByEmail = async (
-  email: string
-): Promise<ResponseObject> => {
+const getUserByEmail = async (email: string): Promise<ResponseObject> => {
   if (!validator.isEmail(email)) {
     return {
       status: "error",
@@ -210,8 +210,7 @@ const getUserByEmail = async (
     };
   }
   try {
-    const dbData =
-      await sql`SELECT * from users where email = ${email};`;
+    const dbData = await sql`SELECT * from users where email = ${email};`;
     return {
       status: "success",
       message: "",
@@ -245,6 +244,7 @@ export const checkLogin = async ({
     return {
       status: "success",
       message: "Correct password.",
+      data: { name, email },
     };
   }
   return {

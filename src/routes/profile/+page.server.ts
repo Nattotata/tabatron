@@ -1,11 +1,6 @@
 import type { Actions } from "./$types";
 
-import {
-  createUser,
-  checkLogin,
-  removeUser,
-  changePassword,
-} from "$lib/db";
+import { createUser, checkLogin, removeUser, changePassword } from "$lib/db";
 import { verifyToken, signToken } from "$lib/jwt";
 
 export const actions = {
@@ -14,7 +9,7 @@ export const actions = {
     // and reset store
     cookies.delete("JWT", { path: "/" });
     return {
-      status: "tada",
+      status: "success",
       message: `See you later!`,
     };
   },
@@ -56,41 +51,31 @@ export const actions = {
       token,
       parsedToken,
       message: `Welcome aboard, ${name}!`,
-      status: "tada",
+      status: "success",
     };
   },
   login: async ({ request, cookies }) => {
     const data = await request.formData();
     const inputEmail = String(data.get("email")) || "";
     const password = String(data.get("password")) || "";
-    const { name, email, status } = await checkLogin({
+    const response = await checkLogin({
       inputEmail: inputEmail,
       inputPassword: password,
     });
-    if (status === 401) {
-      console.error(
-        "Unauthorized access! Passwords do not match."
-      );
+    if (response.status === "error") {
       return {
-        message:
-          "Unauthorized access! Passwords do not match.",
-        status: "not tada",
+        message: response.message,
+        status: "error",
       };
     }
-    if (status === 404) {
-      console.error("User not found!");
-      return {
-        message: "User not found!",
-        status: "not tada",
-      };
-    }
-    if (status === 200) {
+    if (response.status === "success") {
       console.info("Login successful!");
+      const { name, email } = response.data;
       const token = signToken({ name, email });
       cookies.set("JWT", token, { path: "/" });
       return {
         message: `Welcome back, ${name}.`,
-        status: "tada",
+        status: "success",
       };
     }
   },

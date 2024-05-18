@@ -23,9 +23,9 @@
   if (form?.message) {
     const getToastStyle = (status: string) => {
       switch (status) {
-        case "tada":
+        case "success":
           return "variant-filled-success";
-        case "not-tada":
+        case "error":
           return "variant-filled-error";
         default:
           return "variant-filled-warning";
